@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Artur Kochetkov</title>
+<meta name="author" content="Artur Kochetkov">
+<style>
+  @page { size: Letter; margin: 0.55in 0.6in; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: "Liberation Sans", Helvetica, Arial, sans-serif; font-size: 9.6pt; line-height: 1.38; color: #111; }
+  a { color: inherit; text-decoration: none; }
+  h1 { font-size: 21pt; margin: 0 0 2pt; letter-spacing: -0.01em; }
+  .contact { color: #333; }
+  .contact a { color: #1f3fae; }
+  h2 { font-size: 10.5pt; letter-spacing: .06em; margin: 12pt 0 5pt; padding-bottom: 2pt; border-bottom: 0.75pt solid #999; }
+  p { margin: 0; }
+  .role { margin-top: 7pt; break-inside: avoid-page; }
+  .role-head { font-weight: 700; font-size: 10pt; }
+  .when { font-style: italic; color: #555; }
+  ul { margin: 2pt 0 0; padding-left: 14pt; }
+  li { margin: 1.5pt 0; }
+  .proj { margin-top: 4pt; }
+  .proj b a, .proj a { color: #1f3fae; }
+</style>
+</head>
+<body>
+  <h1>Artur Kochetkov</h1>
+  <p class="contact">Houston, TX · Remote, United States · <a href="mailto:kochetkovartur@gmail.com">kochetkovartur@gmail.com</a> · <a href="tel:+12137745000">(213) 774-5000</a></p>
+  <p class="contact"><a href="https://arturkochetkov.dev">arturkochetkov.dev</a> · <a href="https://www.linkedin.com/in/artur-kochetkov/">linkedin.com/in/artur-kochetkov</a> · <a href="https://github.com/artur115">github.com/artur115</a></p>
+  <p class="contact">Authorized to work in the United States. No sponsorship required.</p>
+
+  <h2>SUMMARY</h2>
+  <p>Data and AI engineering leader with 11 years in data, including Director and Head-level roles leading teams of 7 and 10. Since October 2022 at Upwork I have led data engineering on Snowflake and dbt: marketing pipelines, data-quality and reliability systems, and LLM-powered tooling that cut warehouse cost. A hands-on builder with management experience. Seeking a data engineering leadership or staff-level role, remote in the US or in Houston.</p>
+
+  <h2>SKILLS</h2>
+  <p>Leadership: hiring, team building, roadmaps, standards and code review, stakeholder and cost management</p>
+  <p>Technical: Snowflake, dbt, SQL, Python, Airflow, LLM-assisted tooling, data modeling, incremental pipelines, data quality and SLAs, event instrumentation, ETL/ELT, CI/CD, Git, Looker, Tableau</p>
+
+  <h2>EXPERIENCE</h2>
+  <div class="role">
+    <p class="role-head">Data Engineering Lead — Upwork, Remote</p>
+    <p class="when">October 2022 – present</p>
+    <ul>
+      <li>Led an LLM-powered SQL optimization program across 4,000+ legacy queries, scoring each by data scanned and Snowflake credits and generating optimized versions, for six-figure monthly infrastructure savings.</li>
+      <li>Led marketing data engineering with a team of 5 engineers and migrated Braze and related lifecycle feeds from legacy SQL jobs onto dbt staging models, views, tests, and incremental tables used for campaign reporting.</li>
+      <li>Built the Snowflake models behind a platform reliability view: criticality tiers, freshness and uptime targets, and pipeline timing, so on-call and analytics can see which published tables are inside their SLA. Corrected an elapsed-time unit bug that was mis-stating those results.</li>
+      <li>Moved data-quality checks onto dbt and fixed model configs so a dbt Fusion rollout could parse and ship, while production checks kept running.</li>
+      <li>Kept marketplace business-event configuration consistent for core KPIs, including registration and hire, so product and finance reporting counted the same events.</li>
+      <li>Led the v1 AI-assisted workflow that turns a product requirement into a reviewable event spec — event list, field schema, and a check against the KPI config — before engineering starts building.</li>
+      <li>Added catalog metadata on published tables so analysts can find the dataset, the owner, and the grain without asking the pipeline author.</li>
+    </ul>
+  </div>
+  <div class="role">
+    <p class="role-head">Director of Business Intelligence and Engineering — proGroupX, Long Beach, CA</p>
+    <p class="when">July 2021 – October 2022</p>
+    <ul>
+      <li>Led a team of 7 analysts and engineers; hired, set the delivery process, and owned the BI and data platform.</li>
+      <li>Rebuilt the BI platform for full-funnel marketing visibility and live campaign tracking.</li>
+      <li>Built predictive models on marketing spend that improved conversion, and cut production cost through tighter spend allocation.</li>
+    </ul>
+  </div>
+  <div class="role">
+    <p class="role-head">Head of Social Analytics — Alibaba Group (AliExpress), Los Angeles, CA</p>
+    <p class="when">October 2019 – August 2021</p>
+    <ul>
+      <li>Led a team of 10 and an internal real-time performance portal for social marketing across regions.</li>
+      <li>Increased lifetime value of new buyers from social channels by 38% through campaign strategy and customer segmentation.</li>
+      <li>Shipped machine-learning segmentation for ad targeting and a multilingual review analyzer using LLM embeddings.</li>
+      <li>Owned the data for live shopping and a social bargain channel, including the funnel from first touch through purchase.</li>
+    </ul>
+  </div>
+  <div class="role">
+    <p class="role-head">Senior Analyst — TSUM Moscow</p>
+    <p class="when">April 2019 – September 2019</p>
+    <ul><li>Sales analysis, revenue forecasting, and store sales plans. Automated inventory reporting in SQL and OLAP.</li></ul>
+  </div>
+  <div class="role">
+    <p class="role-head">Product Data Manager and Business Development — Lazurit &amp; K</p>
+    <p class="when">October 2015 – September 2019</p>
+    <ul>
+      <li>Promoted in 2017 to oversee locations. Opened the company’s first profitable Moscow retail store in 19 years. Revenue from 2017 to 2018 was over $1 million.</li>
+      <li>Consolidated inventory, accounting, and CRM onto one system and launched the wholesale and retail site on top of it.</li>
+    </ul>
+  </div>
+  <div class="role">
+    <p class="role-head">Financial Analyst — Floral Supply Syndicate, Camarillo, CA</p>
+    <p class="when">February 2015 – October 2015</p>
+    <ul><li>Financial models for revenue and cost, plus automated executive reports in Tableau.</li></ul>
+  </div>
+
+  <h2>PROJECTS</h2>
+  <p class="proj"><b><a href="https://pillwave.app">Pillwave</a></b> — iPhone app for medication reminders with family check-ins, built end to end: Expo and React Native, offline-first SQLite, Supabase sync with row-level security, and a site on Cloudflare. Pre-launch with a public waitlist.</p>
+  <p class="proj"><b><a href="https://github.com/artur115/social-commerce-ltv">social-commerce-ltv</a></b> — GA4-style social-commerce data in DuckDB: six attribution models including Markov, a 180-day LTV model from first-30-day behaviour, and a CUPED-measured experiment that raises repeat purchases.</p>
+  <p class="proj"><b><a href="https://github.com/artur115/marketing-data-reliability">marketing-data-reliability</a></b> — dbt project for a marketing lifecycle with SLA tiers, freshness scoring, model contracts, and an incremental-parity check in CI.</p>
+
+  <h2>EDUCATION</h2>
+  <p>B.S. Business Administration, California State University Channel Islands, 2015</p>
+
+  <h2>CERTIFICATIONS</h2>
+  <p>Data Engineering, Big Data, and Machine Learning on Google Cloud, Coursera specialization, 2022</p>
+  <p>ETL and Data Pipelines with Shell, Airflow, and Kafka, Coursera, 2022</p>
+</body>
+</html>
