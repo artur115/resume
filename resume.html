@@ -7,14 +7,16 @@
 <style>
   @page { size: Letter; margin: 0.55in 0.6in; }
   * { box-sizing: border-box; }
-  body { margin: 0; font-family: "Liberation Sans", Helvetica, Arial, sans-serif; font-size: 9.6pt; line-height: 1.38; color: #111; }
+  body { margin: 0; font-family: "Liberation Sans", Helvetica, Arial, sans-serif; font-size: 9.6pt; line-height: 1.34; color: #111; }
   a { color: inherit; text-decoration: none; }
   h1 { font-size: 21pt; margin: 0 0 2pt; letter-spacing: -0.01em; }
   .contact { color: #333; }
   .contact a { color: #1f3fae; }
-  h2 { font-size: 10.5pt; letter-spacing: .06em; margin: 12pt 0 5pt; padding-bottom: 2pt; border-bottom: 0.75pt solid #999; }
+  h2 { font-size: 10.5pt; letter-spacing: .06em; margin: 10pt 0 4pt; padding-bottom: 2pt; border-bottom: 0.75pt solid #999; }
   p { margin: 0; }
-  .role { margin-top: 7pt; break-inside: avoid-page; }
+  .role { margin-top: 7pt; }
+  .role-head, .when { break-after: avoid-page; }
+  li, .proj { break-inside: avoid-page; }
   .role-head { font-weight: 700; font-size: 10pt; }
   .when { font-style: italic; color: #555; }
   ul { margin: 2pt 0 0; padding-left: 14pt; }
@@ -30,24 +32,35 @@
   <p class="contact">Authorized to work in the United States. No sponsorship required.</p>
 
   <h2>SUMMARY</h2>
-  <p>Data and AI engineering leader with 11 years in data, including Director and Head-level roles leading teams of 7 and 10. Since October 2022 at Upwork I have led data engineering on Snowflake, dbt and Fivetran: marketing pipelines, data-quality and reliability systems, and LLM-powered tooling that cut warehouse cost. A hands-on builder with management experience. Seeking a data engineering leadership or staff-level role, remote in the US or in Houston.</p>
+  <p>Data and AI engineering leader with 11 years in data, including Director and Head-level roles leading teams of 7 and 10. At Upwork since October 2022 I have led data engineering on Snowflake, dbt and Fivetran and built production LLM systems on top of it: an agent that triages data-quality failures, LLM migration and optimization loops that ship only what a parallel run verifies, and product-request-to-event-spec automation. I work directly with product, finance and analytics teams to turn unclear asks into systems they trust. Seeking a staff or lead role in AI data engineering, analytics engineering for AI or forward-deployed engineering, remote in the US or in Houston or Austin.</p>
 
   <h2>SKILLS</h2>
   <p>Leadership: hiring, team building, roadmaps, standards and code review, stakeholder and cost management</p>
-  <p>Technical: Snowflake, dbt, Fivetran, SQL, Python, Airflow, LLM-assisted tooling, data modeling, incremental pipelines, data quality and SLAs, event instrumentation, ETL/ELT, CI/CD, Git, Looker, Tableau</p>
+  <p>AI: LLM agents and tool use (Amazon Bedrock, Claude API), evals and parallel-run verification, structured outputs, MCP, human-in-the-loop routing</p>
+  <p>Data: Snowflake, dbt, Fivetran, SQL, Python, Airflow, data modeling, incremental pipelines, data quality and SLAs, event instrumentation, ETL/ELT, CI/CD, Git, Looker, Tableau</p>
 
   <h2>EXPERIENCE</h2>
+  <div class="role">
+    <p class="role-head">Founder — Kindly Built LLC, Houston, TX</p>
+    <p class="when">2026 – present, alongside Upwork</p>
+    <ul>
+      <li>Building <a href="https://pillwave.app">Pillwave</a>, an iPhone medication-reminder app with family check-ins, end to end: Expo and React Native, offline-first SQLite, Supabase sync with row-level security, and a site on Cloudflare. Pre-launch: public waitlist, early test users.</li>
+      <li>Designed for the two user groups found in testing: adult children caring for a parent, and older parents who need a one-picture flow. AI stays out of the app and runs the marketing (demo film live; ads in progress).</li>
+    </ul>
+  </div>
+
   <div class="role">
     <p class="role-head">Data Engineering Lead — Upwork, Remote</p>
     <p class="when">October 2022 – present</p>
     <ul>
-      <li>Led an LLM-powered SQL optimization program across 4,000+ legacy queries, scoring each by data scanned and Snowflake credits and generating optimized versions, for six-figure monthly infrastructure savings.</li>
-      <li>Led marketing data engineering with a team of 5 engineers and migrated Braze and related lifecycle feeds from legacy SQL jobs onto dbt staging models, views, tests, and incremental tables used for campaign reporting.</li>
-      <li>Built the Snowflake models behind a platform reliability view: criticality tiers, freshness and uptime targets, and pipeline timing, so on-call and analytics can see which published tables are inside their SLA. Corrected an elapsed-time unit bug that was mis-stating those results.</li>
-      <li>Moved data-quality checks onto dbt and fixed model configs so a dbt Fusion rollout could parse and ship, while production checks kept running.</li>
+      <li>Co-built Data Champion, a production LLM agent on Amazon Bedrock that triages about 3,000 daily data-quality checks: it diagnoses each failure by tracing upstream sources in Snowflake, separates false alerts and late data from real breaks, acts only where the table&#8217;s criticality tier allows, and routes the rest to the likely owner in Slack. I designed its criticality tiers and Grafana dashboard.</li>
+      <li>Led an LLM-powered SQL optimization program across 4,000+ legacy queries, scoring each by data scanned and Snowflake credits and generating optimized versions, for six-figure monthly infrastructure savings. Rewrites shipped only when a parallel run matched production output.</li>
+      <li>Designed the playbook for migrating core, marketing and finance SQL to dbt alongside regular sprint work: LLM-assisted conversion (temp tables to CTEs, hard-coded tables to sources and refs), a parallel run of each model against production, and an LLM-generated comparison report before review.</li>
+      <li>Built the LLM skill behind a v1 requirement-to-event-spec workflow: it turns a PM&#8217;s Linear ticket or Slack request into an event list and field schema, checks it against existing KPI configs, and opens an engineering ticket only after the PM confirms, removing the KPI-mapping gaps that had forced terabyte-scale backfills.</li>
+      <li>Led marketing data engineering with a team of 5 engineers; moved Braze and other lifecycle feeds from legacy SQL jobs to dbt models, tests and incremental tables, and worked directly with Braze&#8217;s team when their feed broke.</li>
+      <li>Built the Snowflake models behind a platform reliability view (criticality tiers, freshness and uptime targets, pipeline timing) so on-call and analytics see which tables are inside their SLA; fixed a unit bug that mis-stated the results.</li>
+      <li>Moved data-quality checks onto dbt and fixed model configs so a dbt Fusion rollout could parse and ship while production checks kept running; ran the planning calls with dbt Labs.</li>
       <li>Kept marketplace business-event configuration consistent for core KPIs, including registration and hire, so product and finance reporting counted the same events.</li>
-      <li>Led the v1 AI-assisted workflow that turns a product requirement into a reviewable event spec — event list, field schema, and a check against the KPI config — before engineering starts building.</li>
-      <li>Added catalog metadata on published tables so analysts can find the dataset, the owner, and the grain without asking the pipeline author.</li>
     </ul>
   </div>
   <div class="role">
@@ -65,7 +78,8 @@
     <ul>
       <li>Led a team of 10 and an internal real-time performance portal for social marketing across regions.</li>
       <li>Increased lifetime value of new buyers from social channels by 38% through campaign strategy and customer segmentation.</li>
-      <li>Shipped machine-learning segmentation for ad targeting and a multilingual review analyzer using LLM embeddings.</li>
+      <li>Built polynomial-regression models of ad performance across platforms and used them to move spend toward the strongest ads, an approach I later brought to proGroupX.</li>
+      <li>Analyzed comment and question volume on live streams and product pages by country, showing which products drew the most buyer interest in each market.</li>
       <li>Owned the data for live shopping and a social bargain channel, including the funnel from first touch through purchase.</li>
     </ul>
   </div>
@@ -89,15 +103,16 @@
   </div>
 
   <h2>PROJECTS</h2>
-  <p class="proj"><b><a href="https://pillwave.app">Pillwave</a></b> — iPhone app for medication reminders with family check-ins, built end to end: Expo and React Native, offline-first SQLite, Supabase sync with row-level security, and a site on Cloudflare. Pre-launch with a public waitlist.</p>
+  <p class="proj"><b><a href="https://github.com/artur115/sql-to-dbt-migration-agent">sql-to-dbt-migration-agent</a></b> — Claude agent that migrates a customer&#8217;s 24 legacy SQL jobs to dbt and ships a model only when a parallel run proves identical output. Simulated engagement with discovery, scope and handoff docs; recorded evals and a dbt build gate in CI.</p>
+  <p class="proj"><b><a href="https://github.com/artur115/data-incident-triage-agent">data-incident-triage-agent</a></b> — tool-using Claude agent scored on 48 labelled data incidents (false alert, late data, broken model, broken vendor feed). Read-only tools; a tier policy in code decides what runs unattended.</p>
+  <p class="proj"><b><a href="https://github.com/artur115/spec-to-pipeline-agent">spec-to-pipeline-agent</a></b> — turns PM tracking requests into JSON Schema event specs, checks them against the event catalog and KPI configs, and generates dbt staging models with tests proven on sample events.</p>
   <p class="proj"><b><a href="https://github.com/artur115/social-commerce-ltv">social-commerce-ltv</a></b> — GA4-style social-commerce data in DuckDB: six attribution models including Markov, a 180-day LTV model from first-30-day behaviour, and a CUPED-measured experiment that raises repeat purchases.</p>
-  <p class="proj"><b><a href="https://github.com/artur115/marketing-data-reliability">marketing-data-reliability</a></b> — dbt project for a marketing lifecycle with SLA tiers, freshness scoring, model contracts, and an incremental-parity check in CI.</p>
+  <p class="proj"><b><a href="https://github.com/artur115/marketing-data-reliability">marketing-data-reliability</a></b> — dbt marketing lifecycle with SLA tiers, freshness scoring, contracts and an incremental-parity check.</p>
 
   <h2>EDUCATION</h2>
   <p>B.S. Business Administration, California State University Channel Islands, 2015</p>
 
   <h2>CERTIFICATIONS</h2>
-  <p>Data Engineering, Big Data, and Machine Learning on Google Cloud, Coursera specialization, 2022</p>
-  <p>ETL and Data Pipelines with Shell, Airflow, and Kafka, Coursera, 2022</p>
+  <p>Coursera, 2022: Data Engineering, Big Data and ML on Google Cloud; ETL and Data Pipelines with Shell, Airflow and Kafka</p>
 </body>
 </html>
